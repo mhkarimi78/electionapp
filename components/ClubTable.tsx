@@ -22,12 +22,15 @@ export function ClubTable({ data }: TableProps): ReactElement {
           // eslint-disable-next-line react/jsx-key
           <Link
             href={{
-              pathname: `/${Number(item._hex)}`,
-              query: { electionId: Number(item._hex) },
+              pathname: `/${Number(item._hex + 1)}`,
+              query: { electionId: Number(item._hex) + 1 },
             }}
           >
-            <tr key={item._hex} className="border-b flex flex-col items-center hover:bg-gray-100 w-full">
-              <td className="px-4 py-2">{Number(item._hex)}</td>
+            <tr
+              key={item._hex}
+              className="border-b flex flex-col items-center hover:bg-gray-100 w-full"
+            >
+              <td className="px-4 py-2">{Number(item._hex) + 1}</td>
               {/* <td className="px-4 py-2">{item.name}</td> */}
               {/* <td className="px-4 py-2">{item.memberCount.toString()}</td> */}
             </tr>

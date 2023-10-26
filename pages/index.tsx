@@ -42,15 +42,6 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      {/* <Routes /> */}
-      {/* <main className={styles.main}>
-        <div className={styles.container}>
-          <div>
-            <ConnectWallet />
-          </div>
-          <h1>Election Dapp</h1>
-        </div>
-      </main> */}
       <div className=" bg-slate-300 h-screen">
         <Header />
         <div className="flex font-bold justify-center items-center flex-col w-screen">
@@ -62,12 +53,7 @@ const Home: NextPage = () => {
               <p className="mt-6 mb-10 text-2xl font-inter text-[#261643] font-inter">
                 Your First Election Web3 Dapp
               </p>
-              {/* <p style={gradientTextStyle} className="font-grotesk text-center font-lg">
-              SpheronClub is a light web wallet and Investment Club platform to
-              manage funds (treasury) in Celo Blockchain.
-            </p> */}
             </div>
-            {/* <div className="h-64 w-10" /> */}
           </div>
           <div className="flex flex-col items-center justify-center text-black w-96">
             {isElectionLoading ? (

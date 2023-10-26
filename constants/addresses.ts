@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = "0x206a81B1E5BE8caaF0Ef3c5E86F4aac3947d946f";
+export const CONTRACT_ADDRESS = "0xF4A4b20d4b9f6adE32191a7b86ACC15d675Ae701";
 export const CONTRACT_ABI = [
   {
     inputs: [],
@@ -11,6 +11,11 @@ export const CONTRACT_ABI = [
         internalType: "string",
         name: "name",
         type: "string",
+      },
+      {
+        internalType: "address",
+        name: "walletAddress",
+        type: "address",
       },
       {
         internalType: "uint256",
@@ -39,9 +44,9 @@ export const CONTRACT_ABI = [
   {
     inputs: [
       {
-        internalType: "string",
+        internalType: "address",
         name: "",
-        type: "string",
+        type: "address",
       },
     ],
     name: "candidates",
@@ -50,6 +55,11 @@ export const CONTRACT_ABI = [
         internalType: "string",
         name: "name",
         type: "string",
+      },
+      {
+        internalType: "address",
+        name: "walletAddress",
+        type: "address",
       },
       {
         internalType: "uint256",
@@ -63,6 +73,11 @@ export const CONTRACT_ABI = [
   {
     inputs: [
       {
+        internalType: "string",
+        name: "name",
+        type: "string",
+      },
+      {
         internalType: "uint256",
         name: "startDate",
         type: "uint256",
@@ -71,11 +86,6 @@ export const CONTRACT_ABI = [
         internalType: "uint256",
         name: "endDate",
         type: "uint256",
-      },
-      {
-        internalType: "address[]",
-        name: "participants",
-        type: "address[]",
       },
       {
         internalType: "uint256",
@@ -109,11 +119,6 @@ export const CONTRACT_ABI = [
         internalType: "uint256",
         name: "endDate",
         type: "uint256",
-      },
-      {
-        internalType: "address[]",
-        name: "newParticipants",
-        type: "address[]",
       },
       {
         internalType: "uint256",
@@ -184,6 +189,11 @@ export const CONTRACT_ABI = [
         type: "uint256",
       },
       {
+        internalType: "string",
+        name: "name",
+        type: "string",
+      },
+      {
         internalType: "uint256",
         name: "startDate",
         type: "uint256",
@@ -236,6 +246,11 @@ export const CONTRACT_ABI = [
         type: "uint256",
       },
       {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+      {
         internalType: "uint256",
         name: "",
         type: "uint256",
@@ -244,6 +259,11 @@ export const CONTRACT_ABI = [
         internalType: "uint256",
         name: "",
         type: "uint256",
+      },
+      {
+        internalType: "address[]",
+        name: "",
+        type: "address[]",
       },
       {
         internalType: "address[]",
@@ -280,12 +300,67 @@ export const CONTRACT_ABI = [
   {
     inputs: [
       {
-        internalType: "string",
-        name: "candidateName",
-        type: "string",
+        internalType: "uint256",
+        name: "electionId",
+        type: "uint256",
       },
     ],
     name: "getWinners",
+    outputs: [
+      {
+        internalType: "address[]",
+        name: "",
+        type: "address[]",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "electionId",
+        type: "uint256",
+      },
+    ],
+    name: "isParticipant",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string",
+        name: "name",
+        type: "string",
+      },
+      {
+        internalType: "address",
+        name: "walletAddress",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "electionId",
+        type: "uint256",
+      },
+    ],
+    name: "joinAsParticipant",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "myVotes",
     outputs: [
       {
         internalType: "address[]",
@@ -299,17 +374,27 @@ export const CONTRACT_ABI = [
   {
     inputs: [
       {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "participants",
+    outputs: [
+      {
+        internalType: "string",
+        name: "name",
+        type: "string",
+      },
+      {
+        internalType: "address",
+        name: "walletAddress",
+        type: "address",
+      },
+      {
         internalType: "uint256",
         name: "electionId",
         type: "uint256",
-      },
-    ],
-    name: "myVotes",
-    outputs: [
-      {
-        internalType: "string[]",
-        name: "",
-        type: "string[]",
       },
     ],
     stateMutability: "view",
@@ -323,9 +408,9 @@ export const CONTRACT_ABI = [
         type: "uint256",
       },
       {
-        internalType: "string",
-        name: "candidateName",
-        type: "string",
+        internalType: "address",
+        name: "candidateAddress",
+        type: "address",
       },
     ],
     name: "vote",
@@ -353,6 +438,25 @@ export const CONTRACT_ABI = [
         name: "",
         type: "address",
       },
+    ],
+    name: "voteCounts",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
       {
         internalType: "uint256",
         name: "",
@@ -362,9 +466,9 @@ export const CONTRACT_ABI = [
     name: "votes",
     outputs: [
       {
-        internalType: "string",
+        internalType: "address",
         name: "",
-        type: "string",
+        type: "address",
       },
     ],
     stateMutability: "view",
