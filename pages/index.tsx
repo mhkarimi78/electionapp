@@ -1,16 +1,13 @@
+import React from "react";
 import {
-  ConnectWallet,
   useAddress,
   useContract,
   useContractRead,
 } from "@thirdweb-dev/react";
-import styles from "../styles/Home.module.css";
-import Image from "next/image";
 import { NextPage } from "next";
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants/addresses";
 import { useEffect } from "react";
 import { ClubTable } from "../components/ClubTable";
-import Routes from "./myPages/Routes";
 import Header from "../components/Header";
 
 const gradientTextStyle = {
