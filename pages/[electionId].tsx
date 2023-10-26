@@ -23,11 +23,6 @@ function ElectionDetail() {
     "elections",
     [id]
   );
-  // const { data: adminAddress, isLoading: isLoadingAdmin } = useContractRead(
-  //   contract,
-  //   "admin"
-  // );
-
   const { data: isParticipant, isLoading: loadingIsParticipant } =
     useContractRead(contract, "isParticipant", [Number(id) - 1]);
 

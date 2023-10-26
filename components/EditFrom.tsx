@@ -41,7 +41,7 @@ const EditFrom: React.FC<EditFromProps> = ({ electionId }) => {
 
   return (
     <div className="text-black border flex flex-col items-center justify-center p-10 bg-yellow-200">
-      <p className="pb-10 font-bold">Add your Election</p>
+      <p className="pb-10 font-bold">Edit your Election</p>
       <form className="flex flex-col items-center justify-center">
         <div className="mb-4 ">
           <label

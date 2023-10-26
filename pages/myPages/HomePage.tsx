@@ -1,5 +1,4 @@
 import React,{ ReactElement, useState } from "react";
-import Sidebar from "../../components/SideBar";
 import Header from "../../components/Header";
 
 export function HomePage(): ReactElement {
@@ -15,7 +14,6 @@ export function HomePage(): ReactElement {
 
   return (
     <div className="flex  overflow-hidden bg-gray-100">
-      <Sidebar isOpen={isSidebarOpen} onClose={handleSidebarClose} />
       <div className="flex flex-col flex-1 w-full">
         <Header handleSidebarToggle={handleSidebarToggle} />
       </div>
