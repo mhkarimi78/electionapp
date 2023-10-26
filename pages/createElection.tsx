@@ -1,8 +1,9 @@
+import { NextPage } from "next";
 import { Web3Button } from "@thirdweb-dev/react";
 import React, { useState } from "react";
 import { CONTRACT_ADDRESS } from "../constants/addresses";
 
-function CreateElection() {
+const CreateElection: NextPage = () => {
   const [name, setName] = useState("");
   const [startDate, setStartDate] = useState<number | undefined>(undefined);
   const [endDate, setEndDate] = useState<number | undefined>(undefined);
@@ -138,6 +139,6 @@ function CreateElection() {
       </form>
     </div>
   );
-}
+};
 
 export default CreateElection;

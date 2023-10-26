@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants/addresses";
 import {
@@ -10,7 +11,7 @@ import {
 import ClubForm from "../components/ClubForm";
 import EditFrom from "../components/EditFrom";
 
-function ElectionDetail() {
+const ElectionDetail: NextPage = () => {
   const router = useRouter();
   const address = useAddress();
   const [endDate, setEndDate] = useState("");
@@ -100,6 +101,6 @@ function ElectionDetail() {
       )}
     </div>
   );
-}
+};
 
 export default ElectionDetail;
