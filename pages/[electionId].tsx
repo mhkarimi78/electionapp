@@ -42,7 +42,6 @@ function ElectionDetail() {
           "loading Election Details"
         ) : (
           <div className="flex flex-col items-center">
-            <img src={require("../public/images/vote.svg")} alt="election" />
             <p>Election Id: {election?.id._hex}</p>
             <p>Election Name: {election?.name}</p>
             <p>Election Start Date: {startDate}</p>
